@@ -1,78 +1,98 @@
-$(document).ready(function() {
-
-	crystals = ['assets/images/red.png','assets/images/blue.png','assets/images/yellow.png','assets/images/green.png'];
-
-	var counter = 0;
-	var wins = 0;
-	var losses = 0;
-	$('#win').text(wins);
-	$('#loss').text(losses);
-	
-	newCrystals();
-	newGame();
-
-	function newCrystals () {
-		var numbers = []
-			while(numbers.length < 4){
-			  var randomnumber = Math.ceil(Math.random()*12)
-			  var found = false;
-			  for (var i=0; i< numbers.length; i++){
-				if (numbers[i] == randomnumber){
-					found = true; break
-				}
-			  }
-			  if(!found)numbers[numbers.length]=randomnumber;
-			}
-		console.log(numbers);		
-
-		for (i = 0; i < numbers.length; i++) {
-			var imageCrystal = $('<img>');
-			imageCrystal.attr('data-num', numbers[i]);
-			imageCrystal.attr('src', crystals[i]);
-			imageCrystal.attr('alt', 'crystals');
-			imageCrystal.addClass('crystalImage')
-			$('#crystals').append(imageCrystal);
-		}
-	}
-
-	function newGame() {
-
-		counter = 0;
-		$('#yourScore').text(counter);
-
-		function randomIntFromInterval(min,max){
-		   	return Math.floor(Math.random()*(max-min+1)+min);
-			}
-
-		var numberToGuess = randomIntFromInterval(19,120);
-
-		$('.value').text(numberToGuess);
+$( document ).ready(function(){
+  var random=Math.floor(Math.random()*101+19)
+  // Selects a random number to be shown at the start of the game
+  // Number should be should be between 19 - 120
+  //
+  $('#guessingNumber').text(random);
+  // Appending random number to the randomNumber id in the html doc
+  //
+  var num1= Math.floor(Math.random()*11+1)
+  var num2= Math.floor(Math.random()*11+1)
+  var num3= Math.floor(Math.random()*11+1)
+  var num4= Math.floor(Math.random()*11+1)
+  // Setting up random numbers for each jewel
+  // Random number has to be between 1 - 12
+  // 
+  var userTotal= 0; 
+  var wins= 0;
+  var losses = 0;
+  //  Decaring variables for tallies
+$('#wins').text(wins);
+$('#loss').text(losses);
 
 
-		$('.crystalImage').on('click', function(){
-		    counter = counter + parseInt($(this).data('num'));
-		   
-		    $('#yourScore').text(counter);
-
-		    if (counter == numberToGuess){
-		      $('#status').text('You won!!!!');
-		      wins ++;
-		      $('#win').text(wins);
-		      console.log(wins)
-		      $('#crystals').empty();
-		      newCrystals();
-		      newGame();
-		        
-		    } else if ( counter > numberToGuess){
-		        $('#status').text('You lost!')
-		        losses ++;
-		        $('#loss').text(losses);
-		        console.log(losses)
-		        $('#crystals').empty();
-		        newCrystals();
-		        newGame();
-		    }
-		});
-	}
-
-});
+//resets the game
+function reset(){
+      random=Math.floor(Math.random()*101+19);
+      console.log(random)
+      $('#guessingNumber').text(random);
+      num1= Math.floor(Math.random()*11+1);
+      num2= Math.floor(Math.random()*11+1);
+      num3= Math.floor(Math.random()*11+1);
+      num4= Math.floor(Math.random()*11+1);
+      userTotal= 0;
+      $('#finalScore').text(userTotal);
+      } 
+//adds the wins to the userTotal
+function goodGame(){
+alert("Perfect! You got it!");
+  wins++; 
+  $('#wins').text(wins);
+  reset();
+}
+//addes the losses to the userTotal
+function badGame(){
+alert ("You lose!");
+  losses++;
+  $('#loss').text(losses);
+  reset()
+}
+//sets up click for jewels
+  $('#one').on ('click', function(){
+    userTotal = userTotal + num1;
+    console.log("New userTotal= " + userTotal);
+    $('#finalScore').text(userTotal); 
+          //sets win/lose conditions
+        if (userTotal == random){
+          goodGame();
+        }
+        else if ( userTotal > random){
+          badGame();
+        }   
+  })  
+  $('#two').on ('click', function(){
+    userTotal = userTotal + num2;
+    console.log("New userTotal= " + userTotal);
+    $('#finalScore').text(userTotal); 
+        if (userTotal == random){
+          goodGame();
+        }
+        else if ( userTotal > random){
+          badGame();
+        } 
+  })  
+  $('#three').on ('click', function(){
+    userTotal = userTotal + num3;
+    console.log("New userTotal= " + userTotal);
+    $('#finalScore').text(userTotal);
+//sets win/lose conditions
+          if (userTotal == random){
+          goodGame();
+        }
+        else if ( userTotal > random){
+          badGame();
+        } 
+  })  
+  $('#four').on ('click', function(){
+    userTotal = userTotal + num4;
+    console.log("New userTotal= " + userTotal);
+    $('#finalScore').text(userTotal); 
+      
+          if (userTotal == random){
+          goodGame();
+        }
+        else if ( userTotal > random){
+          badGame();
+        }
+  });   
+}); 

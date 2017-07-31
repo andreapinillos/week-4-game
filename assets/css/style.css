@@ -1,8 +1,11 @@
-body {
-	background-image: url("../images/background.png");
+/* General Elements*/
+body{
+	background-image: url("../images/background.png")
 }
 
+
 h1{
+	font-size: 30px;
 	background-color: orange;
 	color: white;
 	display:inline;
@@ -28,10 +31,11 @@ h1{
 }
 
 #guessingNumber {
+	font-size: 16px;
 	background-color: green;
 	float: left;
 	display: inline-block;
-	padding: 10px;
+	padding: 15px;
 	margin-top: 20px;
 	border: solid 1px #ddd
 }
@@ -49,21 +53,15 @@ h1{
 #crystals {
 	margin-top: 15px;
 	margin-bottom:26px;
-
 }
 
-.crystalImage {
+#one, #two, #three, #four{
 	height: 111px;
 	border: solid 1px #272525;
 	margin-left: 10px
 }
 
-.crystalImage:firstchild {
-	margin-left: 0px;
-
-}
-
-#totalScore {
+#finalScore {
 	margin-bottom: 50px;
 }
 
@@ -73,4 +71,3 @@ h1{
 	padding: 20px;
 	border: solid 1px #ddd
 }
-Contact GitHub API Training Shop Blog About
