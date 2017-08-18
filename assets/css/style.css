@@ -3,71 +3,67 @@ body{
 	background-image: url("../images/background.png")
 }
 
-
-h1{
-	font-size: 30px;
-	background-color: orange;
+header{
+	width:200px;
+	height: 70px;
+	background-color: #D66324;
+	margin-bottom: 10px;
+}
+#name{
 	color: white;
-	display:inline;
-	clear: both;
-	padding: 10px;
-	margin-bottom: 20px;
-	border: solid 1px #ddd;
+	text-align: center;
+	padding-top: 15px;
 }
-
-#wrapper {
-	width: 100%
-	max-width:960px;
-	margin: 0 auto;
-}
-
-#instructions {
-	background-color: white;
-	width: 50%;
-	clear:both;
-	padding: 15px;
-	margin-top: 20px;
-	border: solid 1px #ddd
-}
-
-#guessingNumber {
-	font-size: 16px;
-	background-color: green;
-	float: left;
-	display: inline-block;
-	padding: 15px;
-	margin-top: 20px;
-	border: solid 1px #ddd
-}
-
-#scoreboard {
-	background-color: #03A9F4;
-	display: inline-block;
-	padding: 15px 20px 10px 15px;
-	margin-top: 20px;
-	margin-left: 20px;
-	border: solid 1px #ddd
+.paragraph{
+	width: 350px;
+	height:370px;
+	background-color: #EBD0B9;
+	margin-bottom: 10px;
 
 }
-
-#crystals {
-	margin-top: 15px;
-	margin-bottom:26px;
+p{
+	color: green;
+	padding: 5px;
 }
-
-#one, #two, #three, #four{
-	height: 111px;
-	border: solid 1px #272525;
-	margin-left: 10px
+.start{
+	height:105px;
+    width:300px;
+    display: inline-block;
 }
+.total{
+	width:150px;
+	height: 90px;
+	background-color: #49E692;
+	margin-right: 10px;
+	font-size: 30px;
+	color:#8A358F;
 
-#finalScore {
-	margin-bottom: 50px;
 }
-
-#yts {
-	background: #009688;
-	display: inline;
-	padding: 20px;
-	border: solid 1px #ddd
+.result{
+	width:100px;
+	height: 100px;
+	background-color: #49E6D6;
+	margin-left: 160px;
+	margin-top:-90px;
+}
+.click{
+	width:80px;
+	height:80px;
+}
+.score{
+	width: 180px;
+	height:30px;
+	background-color: #12B5A2;
+	margin-bottom: 10px;
+}
+h5{
+	color: white;
+	padding-top: 7px;
+}
+.addition{
+	width:180px;
+	height:90px;
+	background-color: #12B5A2;
+	font-size: 30px;
+	color: white;
 }
